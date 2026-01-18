@@ -3,15 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>跳转至2b2tCN服务器论坛</title>
-    <!-- 核心跳转配置：3秒后跳转（可改0秒立即跳转） -->
+    <title>2b2tCN - 正在跳转</title>
+    <!-- 引入字体图标增强视觉效果 -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 全局重置与基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+
+        /* 页面背景与整体布局 */
+        body {
+            background: #0a0a0a; /* 深色背景贴合2b2t风格 */
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(60, 60, 60, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(100, 100, 100, 0.1) 0%, transparent 40%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #f0f0f0;
+            overflow: hidden;
+        }
+
+        /* 容器样式 */
+        .jump-container {
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            background: rgba(20, 20, 20, 0.8);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 0 30px rgba(0, 200, 255, 0.15);
+            border: 1px solid rgba(0, 200, 255, 0.2);
+            width: 90%;
+            max-width: 500px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        /* 标题样式 */
+        .jump-title {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #00c8ff;
+            text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+        }
+
+        /* 描述文本 */
+        .jump-desc {
+            font-size: 16px;
+            color: #cccccc;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        /* 加载动画 */
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(0, 200, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #00c8ff;
+            animation: spin 1s ease-in-out infinite;
+            margin: 0 auto 30px;
+        }
+
+        /* 手动跳转按钮 */
+        .jump-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(90deg, #00c8ff, #0088ff);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(0, 200, 255, 0.2);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .jump-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 200, 255, 0.3);
+            background: linear-gradient(90deg, #00a8ff, #0068ff);
+        }
+
+        /* 页脚信息 */
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 12px;
+            color: #888888;
+        }
+
+        /* 动画定义 */
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 480px) {
+            .jump-title {
+                font-size: 24px;
+            }
+            .jump-desc {
+                font-size: 14px;
+            }
+            .jump-btn {
+                padding: 10px 25px;
+                font-size: 14px;
+            }
+            .loader {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+    <!-- 立即跳转配置（0秒无延迟） -->
     <meta http-equiv="refresh" content="0;url=https://2b2t.zhouyi.blog">
 </head>
 <body>
-    <!-- 可选：给用户的提示文字 -->
-    <div style="text-align: center; margin-top: 50px; font-size: 18px;">
-        正在跳转至服务器论坛...<br>
-        如果没有自动跳转，请点击 <a href="https://2b2t.zhouyi.blog">这里</a>
+    <div class="jump-container">
+        <h1 class="jump-title">
+            <i class="fas fa-server"></i> 2b2tCN 社区
+        </h1>
+        <p class="jump-desc">
+            正在连接 2b2t 中文社区服务器...<br>
+            请勿刷新页面，跳转将在瞬间完成
+        </p>
+        <div class="loader"></div>
+        <a href="https://2b2t.zhouyi.blog" class="jump-btn">
+            <i class="fas fa-arrow-right"></i> 立即访问
+        </a>
+    </div>
+
+    <div class="footer">
+        © 2026 2b2tCN 中文社区 - 安全跳转
     </div>
 </body>
 </html>
