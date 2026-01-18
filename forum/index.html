@@ -3,32 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2b2tCN服务器论坛 - 2b2tCN Forum</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            height: 100%;
-            width: 100%;
-        }
-        .fullscreen-iframe {
-            position: absolute; /* 绝对定位 */
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            border: none;
-            z-index: 1;
-        }
-    </style>
+    <title>跳转至2b2tCN服务器论坛</title>
+    <!-- 核心跳转配置：3秒后跳转（可改0秒立即跳转） -->
+    <meta http-equiv="refresh" content="0;url=https://2b2t.zhouyi.blog">
 </head>
 <body>
-    <iframe src="https://2b2t.zhouyi.blog" 
-            class="fullscreen-iframe" 
-            title="2b2t.zhouyi.blog"
-            allowfullscreen>
-    </iframe>
-
+    <!-- 可选：给用户的提示文字 -->
+    <div style="text-align: center; margin-top: 50px; font-size: 18px;">
+        正在跳转至服务器论坛...<br>
+        如果没有自动跳转，请点击 <a href="https://2b2t.zhouyi.blog">这里</a>
+    </div>
 </body>
 </html>
